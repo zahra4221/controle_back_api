@@ -1,0 +1,110 @@
+###
+POST http://localhost:1337/api/auth/local/register
+Content-Type: application/json
+
+{
+  "username": "tomtom1",
+  "email": "thomas1@gmail.com",
+  "password": "admin1234"
+}
+
+###
+POST http://localhost:1337/api/auth/change-password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg4MDAsImV4cCI6MTcwNTQyMjQwMH0.x3Ud5sstX8rN39w9_jDK314sHYtwtmj5PFKeJg2nUjk
+
+{
+  "currentPassword": "admin1234",
+  "password": "tomtom1234",
+  "passwordConfirmation": "tomtom1234"
+}
+
+###
+POST http://localhost:1337/api/auth/local
+Content-Type: application/json
+
+{
+  "identifier": "thomas1@gmail.com",
+  "password": "tomtom1234"
+}
+
+###
+POST http://localhost:1337/api/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg4MDAsImV4cCI6MTcwNTQyMjQwMH0.x3Ud5sstX8rN39w9_jDK314sHYtwtmj5PFKeJg2nUjk
+
+###
+GET http://localhost:1337/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg4MDAsImV4cCI6MTcwNTQyMjQwMH0.x3Ud5sstX8rN39w9_jDK314sHYtwtmj5PFKeJg2nUjk
+
+###
+GET http://localhost:1337/api/free-games
+
+###
+POST http://localhost:1337/api/free-games
+Content-Type: application/json
+
+{
+    "data": {
+        "name": "Sonic",
+        "description": "un hérisson bleu",
+        "image": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9"
+    }
+}
+
+###
+GET http://localhost:1337/api/free-games/1
+
+###
+PUT http://localhost:1337/api/free-games/1
+Content-Type: application/json
+
+{
+    "data": {
+        "name": "Sonic",
+        "description": "un hérisson bleu et rapide",
+        "img": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9"
+    }
+}
+
+###
+DELETE http://localhost:1337/api/free-games/1
+
+###
+GET http://localhost:1337/api/official-games
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg5NDQsImV4cCI6MTcwNTQyMjU0NH0.SsOaNaJiP28f_Pp3mCpzeHeW1vg9B-cC4qImTCxWLqU
+
+###
+POST http://localhost:1337/api/official-games
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg5NDQsImV4cCI6MTcwNTQyMjU0NH0.SsOaNaJiP28f_Pp3mCpzeHeW1vg9B-cC4qImTCxWLqU
+
+{
+    "data": {
+        "name": "Sonic Deluxe",
+        "description": "un hérisson bleu",
+        "price": 59,
+        "image": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9"
+    }
+}
+
+###
+GET http://localhost:1337/api/official-games/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg5NDQsImV4cCI6MTcwNTQyMjU0NH0.SsOaNaJiP28f_Pp3mCpzeHeW1vg9B-cC4qImTCxWLqU
+
+###
+PUT http://localhost:1337/api/official-games/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg5NDQsImV4cCI6MTcwNTQyMjU0NH0.SsOaNaJiP28f_Pp3mCpzeHeW1vg9B-cC4qImTCxWLqU
+
+{
+    "data": {
+        "name": "Sonic Deluxe",
+        "description": "un hérisson bleu",
+        "image": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9",
+        "price": 500
+    }
+}
+
+###
+DELETE http://localhost:1337/api/official-games/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg5NDQsImV4cCI6MTcwNTQyMjU0NH0.SsOaNaJiP28f_Pp3mCpzeHeW1vg9B-cC4qImTCxWLqU
