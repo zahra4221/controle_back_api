@@ -4,8 +4,7 @@ import jwt from "jsonwebtoken";
 
 export interface DecodeToken {
   id: number;
-  username: string;
-  email: string;
+  login: string;
   iat: number;
   exp: number;
 }

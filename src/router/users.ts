@@ -10,8 +10,8 @@ userRouter.get("/me", checkToken, async (req, res) => {
   try {
     const user = await UserModel.findOne({ _id: decoded.id });
     if (user) {
-      const { _id, username } = user;
-      res.json({ id: _id, username });
+      const { _id, login } = user;
+      res.json({ id: _id, login });
     } else {
       res.status(404).send("User not found");
     }

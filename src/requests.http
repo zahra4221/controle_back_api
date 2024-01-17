@@ -1,10 +1,9 @@
 ###
-POST http://localhost:1337/api/auth/local/register
+POST http://localhost:3012/auth/add
 Content-Type: application/json
 
 {
-  "username": "tomtom1",
-  "email": "thomas1@gmail.com",
+  "login": "zahra",
   "password": "admin1234"
 }
 

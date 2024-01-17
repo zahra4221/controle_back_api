@@ -23,7 +23,7 @@ const apiRouter = express.Router();
 apiRouter.use("/auth", authRouter);
 apiRouter.use("/users", userRouter);
 
-app.use("/api", apiRouter);
+app.use("/", apiRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}!`);
