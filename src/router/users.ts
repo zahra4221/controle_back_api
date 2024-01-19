@@ -5,7 +5,7 @@ import UserModel from "../model/User";
 
 export const userRouter = Router();
 
-userRouter.get("/me", checkToken, async (req, res) => {
+userRouter.get("/check-auth", checkToken, async (req, res) => {
   const decoded = jwt.decode(req.token!) as DecodeToken;
   try {
     const user = await UserModel.findOne({ _id: decoded.id });

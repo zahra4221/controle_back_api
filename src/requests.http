@@ -19,12 +19,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyN
 }
 
 ###
-POST http://localhost:1337/api/auth/local
+POST http://localhost:3012/auth/connect
 Content-Type: application/json
 
 {
-  "identifier": "thomas1@gmail.com",
-  "password": "tomtom1234"
+   "login": "zahra14",
+  "password": "zahra14"
 }
 
 ###
@@ -32,78 +32,63 @@ POST http://localhost:1337/api/auth/logout
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg4MDAsImV4cCI6MTcwNTQyMjQwMH0.x3Ud5sstX8rN39w9_jDK314sHYtwtmj5PFKeJg2nUjk
 
 ###
-GET http://localhost:1337/api/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg4MDAsImV4cCI6MTcwNTQyMjQwMH0.x3Ud5sstX8rN39w9_jDK314sHYtwtmj5PFKeJg2nUjk
+GET http://localhost:3012/users/check-auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTk4MTY1MmJlYmU0ZDI0MGQwNGYwMCIsImxvZ2luIjoiemFocmExNCIsImlhdCI6MTcwNTY1MTYwOSwiZXhwIjoxNzA1NjU1MjA5fQ.1ri9kEB8bjeO0X9EUZnJ0848yLjQZv6Er2M5bXO9l5w
+###
+GET http://localhost:3012/games
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTk4MTY1MmJlYmU0ZDI0MGQwNGYwMCIsImxvZ2luIjoiemFocmExNCIsImlhdCI6MTcwNTY3MDA5MCwiZXhwIjoxNzA1NjczNjkwfQ.qPJUXcuNOgtx8TanK7Gvt6mZVthJrEkNybipV1IrArw
 
 ###
-GET http://localhost:1337/api/free-games
 
-###
-POST http://localhost:1337/api/free-games
+POST http://localhost:3012/games
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTk4MTY1MmJlYmU0ZDI0MGQwNGYwMCIsImxvZ2luIjoiemFocmExNCIsImlhdCI6MTcwNTY3MDI1NCwiZXhwIjoxNzA1NjczODU0fQ.kA1elzFJZkcL7mqOiYWDDrwKUhoINXMfLzNOksqpHe8
 Content-Type: application/json
 
 {
-    "data": {
-        "name": "Sonic",
-        "description": "un hérisson bleu",
-        "image": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9"
-    }
+  "joueur1": "zahra1",
+  "joueur2": "zahra2",
+  "winner": "zahra1",
+  "bestTime": 100,
+  "objective": 200
 }
 
 ###
-GET http://localhost:1337/api/free-games/1
-
-###
-PUT http://localhost:1337/api/free-games/1
+PUT http://localhost:3012/games/65aa7b615bdca3b4594e5af6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTk4MTY1MmJlYmU0ZDI0MGQwNGYwMCIsImxvZ2luIjoiemFocmExNCIsImlhdCI6MTcwNTY3MDI1NCwiZXhwIjoxNzA1NjczODU0fQ.kA1elzFJZkcL7mqOiYWDDrwKUhoINXMfLzNOksqpHe8
 Content-Type: application/json
 
 {
-    "data": {
-        "name": "Sonic",
-        "description": "un hérisson bleu et rapide",
-        "img": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9"
-    }
+  "joueur1": "zahra4",
+  "joueur2": "zahra3",
+  "winner": "zahra3",
+  "bestTime": 150,
+  "objective": 250
 }
-
 ###
-DELETE http://localhost:1337/api/free-games/1
-
-###
-GET http://localhost:1337/api/official-games
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg5NDQsImV4cCI6MTcwNTQyMjU0NH0.SsOaNaJiP28f_Pp3mCpzeHeW1vg9B-cC4qImTCxWLqU
-
-###
-POST http://localhost:1337/api/official-games
+GET  http://localhost:3012/games/65aa7cfb030382cb1d565057
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTk4MTY1MmJlYmU0ZDI0MGQwNGYwMCIsImxvZ2luIjoiemFocmExNCIsImlhdCI6MTcwNTY3MDI1NCwiZXhwIjoxNzA1NjczODU0fQ.kA1elzFJZkcL7mqOiYWDDrwKUhoINXMfLzNOksqpHe8
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg5NDQsImV4cCI6MTcwNTQyMjU0NH0.SsOaNaJiP28f_Pp3mCpzeHeW1vg9B-cC4qImTCxWLqU
 
 {
-    "data": {
-        "name": "Sonic Deluxe",
-        "description": "un hérisson bleu",
-        "price": 59,
-        "image": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9"
-    }
+  "joueur1": "zahra4",
+  "joueur2": "zahra3",
+  "winner": "zahra3",
+  "bestTime": 150,
+  "objective": 250
 }
 
-###
-GET http://localhost:1337/api/official-games/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg5NDQsImV4cCI6MTcwNTQyMjU0NH0.SsOaNaJiP28f_Pp3mCpzeHeW1vg9B-cC4qImTCxWLqU
 
 ###
-PUT http://localhost:1337/api/official-games/1
+DELETE  http://localhost:3012/games/65aa7b615bdca3b4594e5af6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTk4MTY1MmJlYmU0ZDI0MGQwNGYwMCIsImxvZ2luIjoiemFocmExNCIsImlhdCI6MTcwNTY3MDI1NCwiZXhwIjoxNzA1NjczODU0fQ.kA1elzFJZkcL7mqOiYWDDrwKUhoINXMfLzNOksqpHe8
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg5NDQsImV4cCI6MTcwNTQyMjU0NH0.SsOaNaJiP28f_Pp3mCpzeHeW1vg9B-cC4qImTCxWLqU
 
 {
-    "data": {
-        "name": "Sonic Deluxe",
-        "description": "un hérisson bleu",
-        "image": "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000040331/desc/d13123553d5a05ebd2f3217db24b35c13131e1cdcf9c5aeb1552ba8e67efd4d9",
-        "price": 500
-    }
+  "joueur1": "zahra4",
+  "joueur2": "zahra3",
+  "winner": "zahra3",
+  "bestTime": 150,
+  "objective": 250
 }
 
-###
-DELETE http://localhost:1337/api/official-games/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YTZhMDAyNWFlMWFjYzhlYmZlM2RkOCIsInVzZXJuYW1lIjoidG9tdG9tMSIsImVtYWlsIjoidGhvbWFzMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU0MTg5NDQsImV4cCI6MTcwNTQyMjU0NH0.SsOaNaJiP28f_Pp3mCpzeHeW1vg9B-cC4qImTCxWLqU
+
